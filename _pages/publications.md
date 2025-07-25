@@ -32,7 +32,7 @@ permalink: /publications/
   <!-- > FlashDreamer, a training-free approach for completing a 3D scene from a single image, significantly reducing the need for multi-view inputs. -->
 
   <!-- </div> -->
-<!-- </div> --> -->
+<!-- </div> --> 
 
 
 <!-- Begin Paper Card -->
@@ -40,7 +40,7 @@ permalink: /publications/
 
   <!-- Left: Image -->
   <div style="flex-shrink: 0;">
-    <img src="images/papers/Flashdreamer/8536.png" alt="FlashDreamer" style="width: 220px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-right: 20px;">
+    <img src="../images/papers/Flashdreamer/8536.png" alt="FlashDreamer" style="width: 220px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-right: 20px;">
   </div>
 
   <!-- Right: Paper Info -->
