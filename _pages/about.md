@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I am currently a PhD candidate at Australian National University (ANU), under the supervision of [Dylan Campbell](https://sites.google.com/view/djcampbell). I received a Master of Machine Learning and Computer Vision with commendation from ANU. I hold a B.Eng in Computer Science and Technology from Shenzhen University, with a thesis in Recommendation System under the supervision of [Weike Pan](https://csse.szu.edu.cn/staff/panwk/).
+I am currently a PhD student at Australian National University (ANU), under the supervision of [Dylan Campbell](https://sites.google.com/view/djcampbell). I received a Master of Machine Learning and Computer Vision with commendation from ANU. I hold a B.Eng in Computer Science and Technology from Shenzhen University, with a thesis in Recommendation System under the supervision of [Weike Pan](https://csse.szu.edu.cn/staff/panwk/).
 
 ## News
 
