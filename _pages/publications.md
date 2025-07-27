@@ -61,6 +61,33 @@ permalink: /publications/
     </p>
   </div>
 </div>
+
+<div style="display: flex; align-items: flex-start; margin-bottom: 30px;">
+
+  <!-- Left: Image -->
+  <div style="flex-shrink: 0;">
+    <img src="../images/papers/FedDistill/GKL_20240716.png" alt="FedDistill" style="width: 220px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-right: 20px;">
+  </div>
+
+  <!-- Right: Paper Info -->
+  <div style="flex-grow: 1;">
+    <h3 style="margin-top: 0; margin-bottom: 10px;">FedDistill: Global Model Distillation for Local Model De-Biasing in Non-IID Federated Learning</h3>
+
+    <p style="margin: 0 0 6px 0;">
+      <strong>Changlin Song</strong>, Divya Saxena, Jiannong Cao, Yuqing Zhao
+    </p>
+
+    <p style="margin: 0 0 10px 0; font-size: 0.9em;">
+      <a href="https://arxiv.org/abs/2404.09210" target="_blank">📄 arXiv:2404.09210</a> 
+      <!-- &nbsp;|&nbsp; -->
+      <!-- <a href="https://github.com/CharlieSong1999/FlashDreamer" target="_blank">🔗 Project Page</a> -->
+    </p>
+
+    <p style="margin: 0;">
+      De-bias local training in FL with global model using Group Distillation.
+    </p>
+  </div>
+</div>
 <!-- End Paper Card -->
 
 <!-- 1. **Zhu, L.**, Chen, Q., Shen, X., Cun, X.. (2025). VAU-R1: Advancing Video Anomaly Understanding via Reinforcement Fine-Tuning (ArXiv). **<span style="color: blue;">RL-based Video Anomaly Reasoning</span>** [[Paper]](https://arxiv.org/abs/2505.23504) [[Code]](https://github.com/GVCLab/VAU-R1)
