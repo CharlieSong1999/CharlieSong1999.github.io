@@ -12,8 +12,8 @@ I am currently a PhD student at Australian National University (ANU), under the 
 ## News
 
 <!-- * 06/2025 I've graduated from ANU with commendation in the MMLCV program. -->
-* 11/2025 Our paper "Extreme amodal face detection" was accepted by WACV 2026! 
-* 7/2025 Starting PhD at ANU. 
+* 11/2025 Our paper "[Extreme amodal face detection](https://charliesong1999.github.io/exaft_web/)" was accepted by WACV 2026! 
+* 07/2025 Starting PhD at ANU. 
 
 
 ## Education
