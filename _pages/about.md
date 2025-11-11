@@ -12,7 +12,8 @@ I am currently a PhD student at Australian National University (ANU), under the 
 ## News
 
 <!-- * 06/2025 I've graduated from ANU with commendation in the MMLCV program. -->
-* 10/2024 I've completed my Master thesis: "Towards extreme amodal face detection", under the supervision of Dylan Campbell. 
+* 11/2025 Our paper "Extreme amodal face detection" was accepted by WACV 2026! 
+* 7/2025 Starting PhD at ANU. 
 
 
 ## Education

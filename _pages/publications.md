@@ -40,6 +40,32 @@ permalink: /publications/
 
   <!-- Left: Image -->
   <div style="flex-shrink: 0;">
+    <img src="../images/papers/EXAFace/qual_grid.png" alt="EXAFace" style="width: 220px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-right: 20px;">
+  </div>
+
+  <!-- Right: Paper Info -->
+  <div style="flex-grow: 1;">
+    <h3 style="margin-top: 0; margin-bottom: 10px;">Enhancing Monocular 3D Scene Completion with Diffusion Model</h3>
+
+    <p style="margin: 0 0 6px 0;">
+      <strong>Changlin Song</strong>, Yunzhong Hou, Michael Barnes, Rahul Shome, Dylan Campbell
+    </p>
+
+    <p style="margin: 0 0 10px 0; font-size: 0.9em;">
+      <a href="https://arxiv.org/abs/2503.00726" target="_blank">📄 arXiv:2503.00726</a> &nbsp;|&nbsp;
+      <a href="https://charliesong1999.github.io/exaft_web/" target="_blank">🔗 Project Page</a>
+    </p>
+
+    <p style="margin: 0;">
+      Detecting face partially or entirely out-of-frame!
+    </p>
+  </div>
+</div>
+
+<div style="display: flex; align-items: flex-start; margin-bottom: 30px;">
+
+  <!-- Left: Image -->
+  <div style="flex-shrink: 0;">
     <img src="../images/papers/Flashdreamer/8536.png" alt="FlashDreamer" style="width: 220px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-right: 20px;">
   </div>
 
