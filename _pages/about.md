@@ -18,7 +18,7 @@ I am currently a PhD student at Australian National University (ANU), under the 
 
 ## Education
 
-* Master of Machine Learning and Computer Vision - Australian National University (ANU), 07/2023 - 06/2025
+* Master of Machine Learning and Computer Vision (with commendation) - Australian National University (ANU), 07/2023 - 06/2025
 
 * B.Eng of Computer Science and Technology - Shenzhen University (SZU), 09/2018 - 06/2022
 
