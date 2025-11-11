@@ -20,7 +20,7 @@ permalink: /publications/
 
   <!-- Right: Paper Info -->
   <div style="flex-grow: 1;">
-    <h3 style="margin-top: 0; margin-bottom: 10px;">Enhancing Monocular 3D Scene Completion with Diffusion Model</h3>
+    <h3 style="margin-top: 0; margin-bottom: 10px;">Extreme Amodal Face Detection</h3>
 
     <p style="margin: 0 0 6px 0;">
       <strong>Changlin Song</strong>, Yunzhong Hou, Michael Barnes, Rahul Shome, Dylan Campbell
