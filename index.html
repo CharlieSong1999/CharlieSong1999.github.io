@@ -10,53 +10,56 @@
 <link rel="apple-touch-icon" href="apple-touch-icon-180x180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,500..800&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap">
 <style>
-/* One page, one 720px column. Yellow underline is the only accent. */
-:root { --bg: #ffffff; --ink: #15181c; --muted: #5c656d; --line: #e2e4df; --accent: #f2bb0d; --tag: #f4f5f2; color-scheme: light; }
-@media (prefers-color-scheme: dark) { :root { --bg: #0f1113; --ink: #eceeea; --muted: #a3aab0; --line: #2d3339; --accent: #f5c531; --tag: #1b1f23; color-scheme: dark; } }
+/* Jon Barron-style: white page, Lato, blue links that turn orange on hover, pale-yellow highlight rows. */
+:root { --bg: #ffffff; --ink: #000000; --muted: #555555; --line: #e4e4e0; --link: #1772d0; --hover: #f09228; --hl: #ffffd0; color-scheme: light; }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--bg); color: var(--ink); font: 18px/1.55 "Source Sans 3", "Helvetica Neue", Arial, sans-serif; }
-main { max-width: 760px; margin: 0 auto; padding: 56px 20px 72px; display: grid; gap: 44px; }
-a { color: inherit; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 3px; }
-a:hover { background: var(--accent); color: #15181c; text-decoration: none; }
-a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-h1, h2, h3 { font-family: "Archivo", "Helvetica Neue", Arial, sans-serif; margin: 0; line-height: 1.15; text-wrap: balance; }
-h1 { font-size: clamp(2rem, 1.4rem + 2.6vw, 2.9rem); font-weight: 800; font-stretch: 112%; letter-spacing: -0.02em; }
-h1 span { font-weight: 500; color: var(--muted); font-size: 0.55em; letter-spacing: 0; margin-left: 0.3em; }
-h2 { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
-h3 { font-size: 1.08rem; font-weight: 700; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.5 "Lato", Verdana, Helvetica, sans-serif; }
+main { max-width: 860px; margin: 0 auto; padding: 44px 20px 60px; display: grid; gap: 34px; }
+a { color: var(--link); text-decoration: none; }
+a:hover, a:focus { color: var(--hover); }
+a:focus-visible { outline: 2px solid var(--hover); outline-offset: 2px; }
+h1, h2, h3 { margin: 0; font-weight: 400; line-height: 1.2; }
+h1 { font-size: 32px; text-align: center; }
+h1 span { font-size: 0.6em; color: var(--muted); margin-left: 0.3em; }
+h2 { font-size: 22px; }
+h3 { font-size: 16px; font-weight: 700; }
 p { margin: 0; }
-section { display: grid; gap: 16px; }
-.intro { display: grid; grid-template-columns: 132px 1fr; gap: 24px; align-items: center; }
-.intro img { width: 132px; height: 132px; border-radius: 50%; object-fit: cover; display: block; }
-.intro .who { display: grid; gap: 8px; }
-.links { display: flex; flex-wrap: wrap; gap: 6px 16px; font-family: "Archivo", sans-serif; font-weight: 600; font-size: 0.95rem; }
-@media (max-width: 520px) { .intro { grid-template-columns: 1fr; } }
-ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
-.news li { display: grid; grid-template-columns: 5.2em 1fr; gap: 12px; }
+section { display: grid; gap: 12px; }
+.intro { display: grid; grid-template-columns: 1fr 180px; gap: 32px; align-items: center; }
+.intro img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; display: block; transition: transform .25s ease; }
+.intro img:hover { transform: scale(1.12); }
+.intro .who { display: grid; gap: 14px; }
+.links { text-align: center; }
+.links a + a::before { content: "/"; color: var(--muted); margin: 0 0.6em; }
+@media (max-width: 560px) { .intro { grid-template-columns: 1fr; justify-items: center; } .intro img { order: -1; } }
+ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
+.news li { display: grid; grid-template-columns: 4.8em 1fr; gap: 10px; }
 .news time, .when { color: var(--muted); font-variant-numeric: tabular-nums; }
-.work { display: grid; gap: 22px; }
-.item { display: grid; grid-template-columns: 200px 1fr; gap: 18px; align-items: start; }
-.item img { width: 200px; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 10px; display: block; border: 1px solid var(--line); }
-.item .txt { display: grid; gap: 4px; min-width: 0; }
-.item .by { color: var(--muted); font-size: 0.95rem; }
-.item .by b { color: var(--ink); font-weight: 600; }
-.tag { display: inline-block; font-family: "Archivo", sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; background: var(--tag); border: 1px solid var(--line); border-radius: 999px; padding: 1px 9px; margin-right: 6px; vertical-align: 2px; }
-.tag.hot { background: var(--accent); border-color: var(--accent); color: #15181c; }
-.item .lk { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 0.95rem; }
-@media (max-width: 560px) { .item { grid-template-columns: 1fr; } .item img { width: 100%; } }
-.more li { padding-left: 14px; border-left: 2px solid var(--line); }
+.work { display: grid; gap: 4px; }
+.item { display: grid; grid-template-columns: 190px 1fr; gap: 20px; align-items: center; padding: 14px; border-radius: 4px; }
+.item.hl { background: var(--hl); }
+.item .pic { position: relative; }
+.item img { width: 190px; height: auto; display: block; border-radius: 3px; transform-origin: left center; transition: transform .25s ease, box-shadow .25s ease; position: relative; z-index: 1; cursor: zoom-in; }
+.item img:hover { transform: scale(2.6); z-index: 5; box-shadow: 0 8px 30px rgba(0,0,0,.28); }
+.item .txt { display: grid; gap: 3px; min-width: 0; }
+.item .by b { font-weight: 700; }
+.item .venue { font-style: italic; }
+.item .venue b { font-style: normal; color: #d40000; }
+.item .lk a + a::before { content: "/"; color: var(--muted); margin: 0 0.5em; }
+@media (max-width: 560px) { .item { grid-template-columns: 1fr; } .item img { width: 100%; transform-origin: center; } .item img:hover { transform: scale(1.04); } }
+.more li { padding: 0 14px; }
 .rows li { display: grid; grid-template-columns: 1fr auto; gap: 12px; }
-footer { color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--line); padding-top: 18px; }
+footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); padding-top: 14px; text-align: right; }
+@media (prefers-reduced-motion: reduce) { .item img, .intro img { transition: none; } }
 </style>
 </head>
 <body>
 <main>
 
 <section class="intro">
-  <img src="assets/img/changlin.jpg" alt="Portrait of Changlin Song" width="132" height="132">
   <div class="who">
     <h1>Changlin Song <span lang="zh">宋昌霖</span></h1>
     <p>PhD student in Computing at the <a href="https://www.anu.edu.au/">Australian National University</a>, supervised by <a href="https://sites.google.com/view/djcampbell">Dylan Campbell</a>. I work on computer vision, 3D vision and spatial intelligence, and on LLM agents for robot control.</p>
@@ -67,6 +70,7 @@ footer { color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--lin
       <a href="https://www.linkedin.com/in/changlin-song-b994a0288/">LinkedIn</a>
     </div>
   </div>
+  <img src="assets/img/changlin.jpg" alt="Portrait of Changlin Song" width="180" height="180">
 </section>
 
 <section>
@@ -80,40 +84,44 @@ footer { color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--lin
 <section>
   <h2>Research</h2>
   <div class="work">
-    <div class="item">
-      <img src="assets/img/spot.jpg" alt="Boston Dynamics Spot rolling a blue water jug on grass" loading="lazy">
+    <div class="item hl">
+      <div class="pic"><img src="assets/img/spot.jpg" alt="Boston Dynamics Spot rolling a blue water jug on grass" loading="lazy"></div>
       <div class="txt">
-        <h3>The agent authors the skill. Physics runs it.</h3>
-        <p class="by"><span class="tag hot">Ongoing</span>with GE and the University of Pennsylvania</p>
+        <h3><a href="https://charliesong1999.github.io/spot-locomanip/">The agent authors the skill. Physics runs it.</a></h3>
+        <p class="by"><b>Changlin Song</b>, with GE and the University of Pennsylvania</p>
+        <p class="venue">Ongoing project, 2026</p>
+        <p class="lk"><a href="https://charliesong1999.github.io/spot-locomanip/">project page</a></p>
         <p>An LLM agent writes whole-body skills for a Boston Dynamics Spot, and a physics-based sampling MPC runs them outdoors with no demonstrations and no per-task training.</p>
-        <div class="lk"><a href="https://charliesong1999.github.io/spot-locomanip/">Project page</a></div>
       </div>
     </div>
-    <div class="item">
-      <img src="assets/img/exaface.jpg" alt="Qualitative results of extreme amodal face detection" loading="lazy">
+    <div class="item hl">
+      <div class="pic"><img src="assets/img/exaface.jpg" alt="Qualitative results of extreme amodal face detection" loading="lazy"></div>
       <div class="txt">
-        <h3>Extreme Amodal Face Detection</h3>
+        <h3><a href="https://charliesong1999.github.io/exaft_web/">Extreme Amodal Face Detection</a></h3>
         <p class="by"><b>Changlin Song</b>, Yunzhong Hou, Michael Randall Barnes, Rahul Shome, Dylan Campbell</p>
-        <p><span class="tag hot">WACV 2026 Oral</span>Detecting faces that are partly or entirely out of frame.</p>
-        <div class="lk"><a href="https://arxiv.org/abs/2510.06791">arXiv</a><a href="https://charliesong1999.github.io/exaft_web/">Project page</a></div>
+        <p class="venue">WACV, 2026 &nbsp;<b>(Oral)</b></p>
+        <p class="lk"><a href="https://charliesong1999.github.io/exaft_web/">project page</a><a href="https://arxiv.org/abs/2510.06791">arXiv</a></p>
+        <p>Detecting faces that are partly or entirely out of frame.</p>
       </div>
     </div>
     <div class="item">
-      <img src="assets/img/flashdreamer.jpg" alt="FlashDreamer 3D scene completion result" loading="lazy">
+      <div class="pic"><img src="assets/img/flashdreamer.jpg" alt="FlashDreamer pipeline figure" loading="lazy"></div>
       <div class="txt">
-        <h3>Enhancing Monocular 3D Scene Completion with Diffusion Model</h3>
+        <h3><a href="https://arxiv.org/abs/2503.00726">Enhancing Monocular 3D Scene Completion with Diffusion Model</a></h3>
         <p class="by"><b>Changlin Song</b>, Jiaqi Wang, Liyun Zhu, He Weng</p>
-        <p><span class="tag">arXiv 2025</span>Completing a 3D scene from a single image without training.</p>
-        <div class="lk"><a href="https://arxiv.org/abs/2503.00726">arXiv</a><a href="https://github.com/CharlieSong1999/FlashDreamer">Code</a></div>
+        <p class="venue">arXiv, 2025</p>
+        <p class="lk"><a href="https://arxiv.org/abs/2503.00726">arXiv</a><a href="https://github.com/CharlieSong1999/FlashDreamer">code</a></p>
+        <p>Completing a 3D scene from a single image without training.</p>
       </div>
     </div>
     <div class="item">
-      <img src="assets/img/feddistill.jpg" alt="FedDistill method figure" loading="lazy">
+      <div class="pic"><img src="assets/img/feddistill.jpg" alt="FedDistill method figure" loading="lazy"></div>
       <div class="txt">
-        <h3>FedDistill: Global Model Distillation for Local Model De-Biasing in Non-IID Federated Learning</h3>
+        <h3><a href="https://arxiv.org/abs/2404.09210">FedDistill: Global Model Distillation for Local Model De-Biasing in Non-IID Federated Learning</a></h3>
         <p class="by"><b>Changlin Song</b>, Divya Saxena, Jiannong Cao, Yuqing Zhao</p>
-        <p><span class="tag">arXiv 2024</span>De-biasing local training in federated learning with group distillation.</p>
-        <div class="lk"><a href="https://arxiv.org/abs/2404.09210">arXiv</a></div>
+        <p class="venue">arXiv, 2024</p>
+        <p class="lk"><a href="https://arxiv.org/abs/2404.09210">arXiv</a></p>
+        <p>De-biasing local training in federated learning with group distillation.</p>
       </div>
     </div>
   </div>
