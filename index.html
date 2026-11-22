@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Changlin Song</title>
+<meta name="description" content="Changlin Song, PhD student in Computing at the Australian National University. Computer vision, 3D vision, and LLM agents for robot control.">
+<link rel="icon" href="favicon.ico">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon-180x180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,500..800&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+/* One page, one 720px column. Yellow underline is the only accent. */
+:root { --bg: #ffffff; --ink: #15181c; --muted: #5c656d; --line: #e2e4df; --accent: #f2bb0d; --tag: #f4f5f2; color-scheme: light; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0f1113; --ink: #eceeea; --muted: #a3aab0; --line: #2d3339; --accent: #f5c531; --tag: #1b1f23; color-scheme: dark; } }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 18px/1.55 "Source Sans 3", "Helvetica Neue", Arial, sans-serif; }
+main { max-width: 760px; margin: 0 auto; padding: 56px 20px 72px; display: grid; gap: 44px; }
+a { color: inherit; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:hover { background: var(--accent); color: #15181c; text-decoration: none; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+h1, h2, h3 { font-family: "Archivo", "Helvetica Neue", Arial, sans-serif; margin: 0; line-height: 1.15; text-wrap: balance; }
+h1 { font-size: clamp(2rem, 1.4rem + 2.6vw, 2.9rem); font-weight: 800; font-stretch: 112%; letter-spacing: -0.02em; }
+h1 span { font-weight: 500; color: var(--muted); font-size: 0.55em; letter-spacing: 0; margin-left: 0.3em; }
+h2 { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+h3 { font-size: 1.08rem; font-weight: 700; }
+p { margin: 0; }
+section { display: grid; gap: 16px; }
+.intro { display: grid; grid-template-columns: 132px 1fr; gap: 24px; align-items: center; }
+.intro img { width: 132px; height: 132px; border-radius: 50%; object-fit: cover; display: block; }
+.intro .who { display: grid; gap: 8px; }
+.links { display: flex; flex-wrap: wrap; gap: 6px 16px; font-family: "Archivo", sans-serif; font-weight: 600; font-size: 0.95rem; }
+@media (max-width: 520px) { .intro { grid-template-columns: 1fr; } }
+ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.news li { display: grid; grid-template-columns: 5.2em 1fr; gap: 12px; }
+.news time, .when { color: var(--muted); font-variant-numeric: tabular-nums; }
+.work { display: grid; gap: 22px; }
+.item { display: grid; grid-template-columns: 200px 1fr; gap: 18px; align-items: start; }
+.item img { width: 200px; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 10px; display: block; border: 1px solid var(--line); }
+.item .txt { display: grid; gap: 4px; min-width: 0; }
+.item .by { color: var(--muted); font-size: 0.95rem; }
+.item .by b { color: var(--ink); font-weight: 600; }
+.tag { display: inline-block; font-family: "Archivo", sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; background: var(--tag); border: 1px solid var(--line); border-radius: 999px; padding: 1px 9px; margin-right: 6px; vertical-align: 2px; }
+.tag.hot { background: var(--accent); border-color: var(--accent); color: #15181c; }
+.item .lk { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 0.95rem; }
+@media (max-width: 560px) { .item { grid-template-columns: 1fr; } .item img { width: 100%; } }
+.more li { padding-left: 14px; border-left: 2px solid var(--line); }
+.rows li { display: grid; grid-template-columns: 1fr auto; gap: 12px; }
+footer { color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--line); padding-top: 18px; }
+</style>
+</head>
+<body>
+<main>
+
+<section class="intro">
+  <img src="assets/img/changlin.jpg" alt="Portrait of Changlin Song" width="132" height="132">
+  <div class="who">
+    <h1>Changlin Song <span lang="zh">宋昌霖</span></h1>
+    <p>PhD student in Computing at the <a href="https://www.anu.edu.au/">Australian National University</a>, supervised by <a href="https://sites.google.com/view/djcampbell">Dylan Campbell</a>. I work on computer vision, 3D vision and spatial intelligence, and on LLM agents for robot control.</p>
+    <div class="links">
+      <a href="mailto:changlin.song@anu.edu.au">Email</a>
+      <a href="https://scholar.google.com/citations?user=p18nozwAAAAJ">Google Scholar</a>
+      <a href="https://github.com/CharlieSong1999">GitHub</a>
+      <a href="https://www.linkedin.com/in/changlin-song-b994a0288/">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>News</h2>
+  <ul class="news">
+    <li><time>11/2025</time><span><a href="https://charliesong1999.github.io/exaft_web/">Extreme Amodal Face Detection</a> accepted to WACV 2026 as an oral.</span></li>
+    <li><time>07/2025</time><span>Started my PhD at ANU.</span></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Research</h2>
+  <div class="work">
+    <div class="item">
+      <img src="assets/img/spot.jpg" alt="Boston Dynamics Spot rolling a blue water jug on grass" loading="lazy">
+      <div class="txt">
+        <h3>The agent authors the skill. Physics runs it.</h3>
+        <p class="by"><span class="tag hot">Ongoing</span>with GE and the University of Pennsylvania</p>
+        <p>An LLM agent writes whole-body skills for a Boston Dynamics Spot, and a physics-based sampling MPC runs them outdoors with no demonstrations and no per-task training.</p>
+        <div class="lk"><a href="https://charliesong1999.github.io/spot-locomanip/">Project page</a></div>
+      </div>
+    </div>
+    <div class="item">
+      <img src="assets/img/exaface.jpg" alt="Qualitative results of extreme amodal face detection" loading="lazy">
+      <div class="txt">
+        <h3>Extreme Amodal Face Detection</h3>
+        <p class="by"><b>Changlin Song</b>, Yunzhong Hou, Michael Randall Barnes, Rahul Shome, Dylan Campbell</p>
+        <p><span class="tag hot">WACV 2026 Oral</span>Detecting faces that are partly or entirely out of frame.</p>
+        <div class="lk"><a href="https://arxiv.org/abs/2510.06791">arXiv</a><a href="https://charliesong1999.github.io/exaft_web/">Project page</a></div>
+      </div>
+    </div>
+    <div class="item">
+      <img src="assets/img/flashdreamer.jpg" alt="FlashDreamer 3D scene completion result" loading="lazy">
+      <div class="txt">
+        <h3>Enhancing Monocular 3D Scene Completion with Diffusion Model</h3>
+        <p class="by"><b>Changlin Song</b>, Jiaqi Wang, Liyun Zhu, He Weng</p>
+        <p><span class="tag">arXiv 2025</span>Completing a 3D scene from a single image without training.</p>
+        <div class="lk"><a href="https://arxiv.org/abs/2503.00726">arXiv</a><a href="https://github.com/CharlieSong1999/FlashDreamer">Code</a></div>
+      </div>
+    </div>
+    <div class="item">
+      <img src="assets/img/feddistill.jpg" alt="FedDistill method figure" loading="lazy">
+      <div class="txt">
+        <h3>FedDistill: Global Model Distillation for Local Model De-Biasing in Non-IID Federated Learning</h3>
+        <p class="by"><b>Changlin Song</b>, Divya Saxena, Jiannong Cao, Yuqing Zhao</p>
+        <p><span class="tag">arXiv 2024</span>De-biasing local training in federated learning with group distillation.</p>
+        <div class="lk"><a href="https://arxiv.org/abs/2404.09210">arXiv</a></div>
+      </div>
+    </div>
+  </div>
+  <ul class="more">
+    <li><a href="https://arxiv.org/abs/2511.22242">Rethinking Test Time Scaling for Flow-Matching Generative Models</a><br><span class="when">Qingtao Yu, <b>Changlin Song</b>, Minghao Sun, Zhengyang Yu, Vinay Kumar Verma, Soumya Roy, Sumit Negi, Hongdong Li, Dylan Campbell · arXiv 2025 · <a href="https://github.com/TerrysLearning/DOGTrimTTS">Code</a></span></li>
+    <li><a href="https://doi.org/10.1016/j.neucom.2026.135391">Overcoming growth-induced forgetting with sparsity in task-agnostic continual learning</a><br><span class="when">Yuqing Zhao, Jiannong Cao, Divya Saxena, Xiaoyun Liu, <b>Changlin Song</b>, Bo Yuan, Julie McCann · Neurocomputing 2026</span></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <ul class="rows">
+    <li><span>PhD in Computing, Australian National University</span><span class="when">2025 – now</span></li>
+    <li><span>Master of Machine Learning and Computer Vision (with Commendation), ANU</span><span class="when">2023 – 2025</span></li>
+    <li><span>B.Eng. in Computer Science and Technology, Shenzhen University</span><span class="when">2018 – 2022</span></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Teaching and service</h2>
+  <ul>
+    <li>Tutor at ANU for Computer Vision, Advanced Topics in Computer Vision, Advanced Topics in Machine Learning, and Computer Graphics.</li>
+    <li>Reviewer for IEEE Transactions on Mobile Computing and AJCAI 2025.</li>
+  </ul>
+</section>
+
+<footer>Brian Anderson Building, 115 North Rd, Acton ACT 2601, Australia · changlin.song@anu.edu.au</footer>
+
+</main>
+</body>
+</html>
