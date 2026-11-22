@@ -53,6 +53,11 @@ ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
 .more li { padding: 0 14px; }
 .rows li { display: grid; grid-template-columns: 1fr auto; gap: 12px; }
 footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); padding-top: 14px; text-align: right; }
+.vis-btn { font: inherit; color: var(--link); background: none; border: 0; padding: 0; cursor: pointer; }
+.vis-btn:hover, .vis-btn:focus { color: var(--hover); }
+#visitors { margin-top: 12px; display: grid; gap: 4px; justify-items: end; }
+#visitors[hidden] { display: none; }
+#visitors img { max-width: 100%; height: auto; border: 1px solid var(--line); }
 @media (prefers-reduced-motion: reduce) { .item img, .intro img { transition: none; } }
 </style>
 </head>
@@ -148,7 +153,24 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
   </ul>
 </section>
 
-<footer>Brian Anderson Building, 115 North Rd, Acton ACT 2601, Australia · changlin.song@anu.edu.au</footer>
+<footer>
+  Brian Anderson Building, 115 North Rd, Acton ACT 2601, Australia · changlin.song@anu.edu.au ·
+  <button type="button" id="visBtn" class="vis-btn" aria-expanded="false" aria-controls="visitors">Visitors</button>
+  <!-- Visitor map (ClustrMaps). The image always loads so visits are counted; the panel is hidden until "Visitors" is clicked. -->
+  <div id="visitors" hidden>
+    <a href="https://clustrmaps.com/site/1c7ar" title="Open full visitor statistics on ClustrMaps"><img src="https://www.clustrmaps.com/map_v2.png?d=f16Xvpldv35XiD78XH7TG2uJ0-b5Nz-5x8uT6SZOzLM&cl=ffffff" alt="Map of visitors to this page" width="300"></a>
+    <div>Click the map for counts by country.</div>
+  </div>
+</footer>
+<script>
+(function () {
+  var b = document.getElementById("visBtn"), p = document.getElementById("visitors");
+  function set(open) { p.hidden = !open; b.setAttribute("aria-expanded", open ? "true" : "false"); }
+  var open = false; try { open = localStorage.getItem("showVisitors") === "1"; } catch (e) {}
+  set(open);
+  b.addEventListener("click", function () { open = !open; set(open); try { localStorage.setItem("showVisitors", open ? "1" : "0"); } catch (e) {} });
+})();
+</script>
 
 </main>
 </body>
