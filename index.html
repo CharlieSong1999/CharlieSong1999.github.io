@@ -156,15 +156,15 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
 <footer>
   Brian Anderson Building, 115 North Rd, Acton ACT 2601, Australia · changlin.song@anu.edu.au
   <button type="button" id="visBtn" class="vis-btn" aria-expanded="false" aria-controls="visitors" hidden>Visitors</button>
-  <!-- Visitor map (MapMyVisitors). Put the widget key from mapmyvisitors.com in data-key below.
+  <!-- Visitor map (MapMyVisitors): data-key is the widget key, data-site the id of the public stats page.
        With a key, every visit is counted; the map stays hidden until "Visitors" is clicked. Without a key nothing loads. -->
-  <div id="visitors" data-key="" hidden></div>
+  <div id="visitors" data-key="4qHDAefyPVg9IWfRtDOrLUKUMznx2hCUxypv74DO97M" data-site="1c9mb" hidden></div>
 </footer>
 <script>
 (function () {
   var b = document.getElementById("visBtn"), p = document.getElementById("visitors"), key = p.getAttribute("data-key");
   if (!key) return;
-  var a = document.createElement("a"); a.href = "https://mapmyvisitors.com/web/" + key; a.title = "Open full visitor statistics";
+  var a = document.createElement("a"); a.href = "https://mapmyvisitors.com/web/" + p.getAttribute("data-site"); a.title = "Open full visitor statistics";
   var im = document.createElement("img"); im.alt = "Map of visitors to this page"; im.width = 300;
   im.src = "https://mapmyvisitors.com/map.png?d=" + encodeURIComponent(key) + "&cl=ffffff";
   a.appendChild(im); p.appendChild(a);
