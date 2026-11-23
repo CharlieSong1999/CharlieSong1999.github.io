@@ -42,14 +42,14 @@ ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
 .item { display: grid; grid-template-columns: 190px 1fr; gap: 20px; align-items: center; padding: 14px; border-radius: 4px; }
 .item.hl { background: var(--hl); }
 .item .pic { position: relative; }
-.item img { width: 190px; height: auto; display: block; border-radius: 3px; transform-origin: left center; transition: transform .25s ease, box-shadow .25s ease; position: relative; z-index: 1; cursor: zoom-in; }
-.item img:hover { transform: scale(2.6); z-index: 5; box-shadow: 0 8px 30px rgba(0,0,0,.28); }
+.item img, .item video { width: 190px; height: auto; display: block; border-radius: 3px; transform-origin: left center; transition: transform .25s ease, box-shadow .25s ease; position: relative; z-index: 1; cursor: zoom-in; }
+.item img:hover, .item video:hover { transform: scale(2.6); z-index: 5; box-shadow: 0 8px 30px rgba(0,0,0,.28); }
 .item .txt { display: grid; gap: 3px; min-width: 0; }
 .item .by b { font-weight: 700; }
 .item .venue { font-style: italic; }
 .item .venue b { font-style: normal; color: #d40000; }
 .item .lk a + a::before { content: "/"; color: var(--muted); margin: 0 0.5em; }
-@media (max-width: 560px) { .item { grid-template-columns: 1fr; } .item img { width: 100%; transform-origin: center; } .item img:hover { transform: scale(1.04); } }
+@media (max-width: 560px) { .item { grid-template-columns: 1fr; } .item img, .item video { width: 100%; transform-origin: center; } .item img:hover, .item video:hover { transform: scale(1.04); } }
 .more li { padding: 0 14px; }
 .rows li { display: grid; grid-template-columns: 1fr auto; gap: 12px; }
 footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); padding-top: 14px; text-align: right; }
@@ -58,7 +58,7 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
 #visitors { margin-top: 12px; display: grid; gap: 4px; justify-items: end; }
 #visitors[hidden] { display: none; }
 #visitors img { max-width: 100%; height: auto; border: 1px solid var(--line); }
-@media (prefers-reduced-motion: reduce) { .item img, .intro img { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .item img, .item video, .intro img { transition: none; } }
 </style>
 </head>
 <body>
@@ -90,7 +90,7 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
   <h2>Research</h2>
   <div class="work">
     <div class="item hl">
-      <div class="pic"><img src="assets/img/spot.jpg" alt="Boston Dynamics Spot rolling a blue water jug on grass" loading="lazy"></div>
+      <div class="pic"><video src="assets/img/spot.mp4" poster="assets/img/spot.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Boston Dynamics Spot rolling a blue water jug on grass"></video></div>
       <div class="txt">
         <h3><a href="https://charliesong1999.github.io/spot-locomanip/">The agent authors the skill. Physics runs it.</a></h3>
         <p class="by"><b>Changlin Song</b>, with GE and the University of Pennsylvania</p>
@@ -154,17 +154,22 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
 </section>
 
 <footer>
-  Brian Anderson Building, 115 North Rd, Acton ACT 2601, Australia · changlin.song@anu.edu.au ·
-  <button type="button" id="visBtn" class="vis-btn" aria-expanded="false" aria-controls="visitors">Visitors</button>
-  <!-- Visitor map (ClustrMaps). The image always loads so visits are counted; the panel is hidden until "Visitors" is clicked. -->
-  <div id="visitors" hidden>
-    <a href="https://clustrmaps.com/site/1c7ar" title="Open full visitor statistics on ClustrMaps"><img src="https://www.clustrmaps.com/map_v2.png?d=f16Xvpldv35XiD78XH7TG2uJ0-b5Nz-5x8uT6SZOzLM&cl=ffffff" alt="Map of visitors to this page" width="300"></a>
-    <div>Click the map for counts by country.</div>
-  </div>
+  Brian Anderson Building, 115 North Rd, Acton ACT 2601, Australia · changlin.song@anu.edu.au
+  <button type="button" id="visBtn" class="vis-btn" aria-expanded="false" aria-controls="visitors" hidden>Visitors</button>
+  <!-- Visitor map (MapMyVisitors). Put the widget key from mapmyvisitors.com in data-key below.
+       With a key, every visit is counted; the map stays hidden until "Visitors" is clicked. Without a key nothing loads. -->
+  <div id="visitors" data-key="" hidden></div>
 </footer>
 <script>
 (function () {
-  var b = document.getElementById("visBtn"), p = document.getElementById("visitors");
+  var b = document.getElementById("visBtn"), p = document.getElementById("visitors"), key = p.getAttribute("data-key");
+  if (!key) return;
+  var a = document.createElement("a"); a.href = "https://mapmyvisitors.com/web/" + key; a.title = "Open full visitor statistics";
+  var im = document.createElement("img"); im.alt = "Map of visitors to this page"; im.width = 300;
+  im.src = "https://mapmyvisitors.com/map.png?d=" + encodeURIComponent(key) + "&cl=ffffff";
+  a.appendChild(im); p.appendChild(a);
+  var n = document.createElement("div"); n.textContent = "Click the map for counts by country."; p.appendChild(n);
+  b.hidden = false;
   function set(open) { p.hidden = !open; b.setAttribute("aria-expanded", open ? "true" : "false"); }
   var open = false; try { open = localStorage.getItem("showVisitors") === "1"; } catch (e) {}
   set(open);
